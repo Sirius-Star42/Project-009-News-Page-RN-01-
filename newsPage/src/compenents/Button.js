@@ -15,6 +15,7 @@ const styles =StyleSheet.create({
         borderRadius: 10,
         width:Dimensions.get('window').width / 2,
         alignSelf: "center",
+        margin: 20
 
     },
     text: {

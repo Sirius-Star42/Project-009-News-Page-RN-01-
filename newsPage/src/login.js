@@ -30,6 +30,8 @@ const styles = StyleSheet.create({
     logoStyle: {
         resizeMode: "contain",
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height * 0.30
+        height: Dimensions.get('window').height * 0.20,
+        marginBottom: 20,
+        marginTop:20,
     },
 })
