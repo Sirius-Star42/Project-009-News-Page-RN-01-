@@ -12,7 +12,7 @@ const login = () => {
                 style={styles.logoStyle}/>
                 <Input holder="Please Enter E-Mail Adress"/>
                 <Input holder="Please Enter Password"/>
-                
+                <Button text="Enter" />
             </View>
         </SafeAreaView>
 
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     logoStyle: {
         resizeMode: "contain",
         width: Dimensions.get('window').width,
-        height: Dimensions.get('window').height * 0.40
+        height: Dimensions.get('window').height * 0.30
     },
 })
