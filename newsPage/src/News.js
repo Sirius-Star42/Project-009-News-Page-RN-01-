@@ -2,7 +2,6 @@ import React from 'react';
 import { SafeAreaView, View, Text, StyleSheet, ScrollView, FlatList, Image, Dimensions  } from "react-native";
 import { NewsCard } from "./compenents";
 
-
 const mydata = [{
     id:0,
     title:'McDonnell Douglas F-15E Strike Eagle',
@@ -64,6 +63,7 @@ const News = () => {
         )
     }; 
     const listHeader = () => {
+        
         return (
             <ScrollView horizontal showsHorizontalScrollIndicator={false} >
                 {banner_data.map( banner_item => {
@@ -72,13 +72,14 @@ const News = () => {
                             uri:banner_item.image_url}} 
                             style={{
                                 
-                                height:Dimensions.get('window').height *0.28,
+                                height:Dimensions.get('window').height *0.27,
                                 width:Dimensions.get('window').width * 0.9, 
                                 resizeMode:'cover',
                                 margin: 5,
                                 borderRadius: 3,
                     
                             }}/>
+                            
                     )
                 })}
             </ScrollView>
@@ -91,7 +92,8 @@ const News = () => {
                 data={mydata}
                 renderItem={renderNews}
                 ListHeaderComponent={listHeader}
-            />    
+            />
+                
         </SafeAreaView>  
     )
 }
