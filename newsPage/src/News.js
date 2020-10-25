@@ -1,5 +1,5 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ScrollView, FlatList,  } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, FlatList, Image, Dimensions  } from "react-native";
 import { NewsCard } from "./compenents";
 
 
@@ -54,24 +54,43 @@ const banner_data =[
     },
 ]
 
-
 //const renderNews = ({item}) => { 
 //    return (<Text>{item.title}</Text>)};       
      
-
 const News = () => {
     const renderNews = ({item}) => { 
         return(
         <NewsCard news={item}/>
         )
     }; 
+    const listHeader = () => {
+        return (
+            <ScrollView horizontal showsHorizontalScrollIndicator={false} >
+                {banner_data.map( banner_item => {
+                    return (
+                        <Image source={{
+                            uri:banner_item.image_url}} 
+                            style={{
+                                
+                                height:Dimensions.get('window').height *0.28,
+                                width:Dimensions.get('window').width * 0.9, 
+                                resizeMode:'cover',
+                                margin: 5,
+                                borderRadius: 3,
+                    
+                            }}/>
+                    )
+                })}
+            </ScrollView>
+        )
+    };
     return (
-        
         <SafeAreaView style={{flex:1}}> 
             <FlatList
                 keyExtractor={(item, index) => {item.id.toString()}}
                 data={mydata}
-                renderItem={renderNews}    
+                renderItem={renderNews}
+                ListHeaderComponent={listHeader}
             />    
         </SafeAreaView>  
     )
