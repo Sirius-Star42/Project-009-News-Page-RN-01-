@@ -1,8 +1,8 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet, ScrollView, FlatList } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, ScrollView, FlatList,  } from "react-native";
 import { NewsCard } from "./compenents";
 
-const myArray = [1, 2, 3, 4];
+
 const mydata = [{
     id:0,
     title:'McDonnell Douglas F-15E Strike Eagle',
@@ -35,30 +35,45 @@ const mydata = [{
 },
 ];
 
+const banner_data =[
+    {
+        id:0,
+        image_url:'https://www.thebalancecareers.com/thmb/8SCWZCp6b986yyHLxhy5HYfRZl8=/300x200/filters:no_upscale():max_bytes(150000):strip_icc():saturation(0.2):brightness(10):contrast(5)/2812527-56a9b30c5f9b58b7d0fe2e67.jpg'
+    },
+    {
+        id:1,
+        image_url:'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSq5JFkFC_umpkK96hK5bOQtCXsUjak_5B_Xw&usqp=CAU'
+    },
+    {
+        id:2,
+        image_url:'https://lh5.ggpht.com/_Tsf-t_mqSxc/TThtZ7JpTeI/AAAAAAAAxIc/U1anL0jBKi4/s800/2009%20US%20Air%20Force%20with%20GAS%20Mustang%20X-1_11.jpg'
+    },
+    {
+        id:3,
+        image_url:'https://www.usagovpolicy.com/wp-content/uploads/2019/03/Index-USAF-624x416.jpg'
+    },
+]
+
 
 //const renderNews = ({item}) => { 
 //    return (<Text>{item.title}</Text>)};       
      
-const renderNews = ({item}) => { 
-    return(
-    <NewsCard news={item}/>
-    )
-}; 
-const News = () => {
 
+const News = () => {
+    const renderNews = ({item}) => { 
+        return(
+        <NewsCard news={item}/>
+        )
+    }; 
     return (
-        <SafeAreaView style={{flex:1}}>
-             
-            
+        
+        <SafeAreaView style={{flex:1}}> 
             <FlatList
                 keyExtractor={(item, index) => {item.id.toString()}}
                 data={mydata}
-                renderItem={renderNews}
-            />
-            
+                renderItem={renderNews}    
+            />    
         </SafeAreaView>  
-    
-
     )
 }
 
